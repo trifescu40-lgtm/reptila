@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Customer Reward Portal</title>
+    <title>Kohl's Customer Offer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,900;1,800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -17,91 +17,143 @@
         }
     </script>
     <style>
-        body { background-color: #f3f4f6; }
-        .gradient-card { background: linear-gradient(135deg, #0d9488 0%, #E10C7A 50%, #9333ea 100%); }
+        body { background-color: #f8f9fa; }
+        /* FAQ Accordion Styling */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased pb-20">
 
     <!-- Mobile Container -->
-    <main class="max-w-md mx-auto bg-white min-h-screen relative shadow-2xl overflow-x-hidden pb-10">
+    <main class="max-w-md mx-auto bg-[#f8f9fa] min-h-screen relative shadow-2xl overflow-x-hidden">
         
-        <!-- Header -->
-        <header class="flex justify-between items-center px-6 py-4 bg-white sticky top-0 z-40">
-            <div class="flex flex-col">
-                <span class="text-xl font-black tracking-widest uppercase text-black">Kohl's</span>
-                <span class="text-[10px] text-kohlsmagenta font-bold tracking-widest uppercase mt-0.5">Rewards Club</span>
+        <!-- Header Banner -->
+        <header class="bg-kohlsmagenta px-6 pt-10 pb-12 text-center rounded-b-[2rem]">
+            <!-- Fake Logo Box -->
+            <div class="bg-white w-20 h-20 mx-auto rounded-2xl flex items-center justify-center shadow-lg mb-6">
+                <span class="text-kohlsmagenta font-black text-lg tracking-tighter">KOHL'S</span>
             </div>
-            <div class="flex items-center gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-kohlsmagenta animate-pulse"></span>
-                <span class="text-xs font-bold text-kohlsmagenta tracking-wider uppercase">Live</span>
-            </div>
+            
+            <h1 class="text-white text-4xl font-extrabold italic tracking-wide uppercase drop-shadow-sm">Love Shopping?</h1>
+            
+            <p class="text-white mt-4 text-[15px] font-medium leading-relaxed px-2">
+                Kohl's is rewarding customers with a $750 gift card for sharing their shopping experience. Limited spots available.
+            </p>
         </header>
 
-        <!-- Hero Card -->
-        <div class="mx-5 mt-2 rounded-3xl p-8 gradient-card shadow-[0_10px_30px_rgba(225,12,122,0.3)] relative overflow-hidden flex flex-col items-center justify-center min-h-[180px]">
-            <div class="absolute inset-0 bg-white/10 mix-blend-overlay"></div>
-            <span class="text-white text-[5rem] leading-none font-light tracking-tighter drop-shadow-md z-10">$750</span>
-            <span class="text-white text-3xl font-light tracking-[0.2em] mt-2 drop-shadow-md z-10 uppercase">Kohl's</span>
-        </div>
-
-        <!-- Main CTA Section -->
-        <div class="px-6 text-center mt-8">
-            <h1 class="text-[32px] font-black text-black leading-[1.1] tracking-tight">Get a $750<br>Kohl's Voucher</h1>
-            <p class="text-gray-500 mt-4 text-[15px] px-2 font-medium leading-relaxed">
-                Complete 4-5 deals. Voucher delivered straight to your inbox.
-            </p>
+        <!-- Main Content Area -->
+        <div class="px-5 -mt-4">
             
-            <!-- Updated HTTPS Affiliate Link -->
-            <a href="https://giftclick.org/?offer_id=4140&aff_id=163201" 
-               class="mt-6 block w-full bg-kohlsmagenta text-white font-black text-[15px] py-4 rounded-2xl shadow-[0_8px_20px_rgba(225,12,122,0.25)] uppercase tracking-wide active:scale-95 transition-transform">
-                Claim Now My $750 Kohl's Voucher
-            </a>
+            <!-- Steps Section -->
+            <h2 class="text-center text-[22px] font-bold text-gray-900 mt-10 mb-4 tracking-tight">Steps to Qualify:</h2>
             
-            <div class="flex justify-center items-center gap-2 mt-5 text-gray-500 text-sm font-medium">
-                <span>🔒</span> <span>SSL Secure & Verified</span>
-            </div>
-        </div>
-
-        <!-- How It Works Section -->
-        <div class="mt-12 px-8">
-            <div class="text-center mb-8">
-                <p class="text-kohlsmagenta text-[11px] font-bold tracking-[0.25em] uppercase mb-1">3 Simple Steps</p>
-                <h2 class="text-[32px] font-black tracking-tight text-black">How it works</h2>
-            </div>
-            
-            <!-- Vertical Timeline -->
-            <div class="relative border-l-[3px] border-pink-100 ml-2 space-y-10 pb-4">
-                
+            <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 space-y-5">
                 <!-- Step 1 -->
-                <div class="relative pl-8">
-                    <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-kohlsmagenta ring-[6px] ring-white"></div>
-                    <p class="text-[11px] text-gray-400 font-bold tracking-[0.2em] uppercase mb-1.5">Step 01</p>
-                    <h3 class="text-xl font-bold text-black mb-1.5 tracking-tight">Tap Claim Now</h3>
-                    <p class="text-gray-500 text-[15px] leading-relaxed">Start your reward in seconds.</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-8 h-8 rounded-full bg-kohlsmagenta text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-sm">1</div>
+                    <p class="text-gray-800 font-semibold text-[15px]">Click the "Start Now" below</p>
                 </div>
-                
                 <!-- Step 2 -->
-                <div class="relative pl-8">
-                    <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-kohlsmagenta ring-[6px] ring-white"></div>
-                    <p class="text-[11px] text-gray-400 font-bold tracking-[0.2em] uppercase mb-1.5">Step 02</p>
-                    <h3 class="text-xl font-bold text-black mb-1.5 tracking-tight">Complete Quick Offers</h3>
-                    <p class="text-gray-500 text-[15px] leading-relaxed">Complete 4-5 deals from our partners. Each shows its terms first.</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-8 h-8 rounded-full bg-kohlsmagenta text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-sm">2</div>
+                    <p class="text-gray-800 font-semibold text-[15px]">Enter your email and basic info</p>
                 </div>
-                
                 <!-- Step 3 -->
-                <div class="relative pl-8">
-                    <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-kohlsmagenta ring-[6px] ring-white"></div>
-                    <p class="text-[11px] text-gray-400 font-bold tracking-[0.2em] uppercase mb-1.5">Step 03</p>
-                    <h3 class="text-xl font-bold text-black mb-1.5 tracking-tight">Get Your Voucher</h3>
-                    <p class="text-gray-500 text-[15px] leading-relaxed">Delivered straight to your inbox once confirmed.</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-8 h-8 rounded-full bg-kohlsmagenta text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-sm">3</div>
+                    <p class="text-gray-800 font-semibold text-[15px]">Complete 4-5 simple deals</p>
                 </div>
-
+                <!-- Step 4 -->
+                <div class="flex items-center gap-4">
+                    <div class="w-8 h-8 rounded-full bg-kohlsmagenta text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-sm">4</div>
+                    <p class="text-gray-800 font-semibold text-[15px]">Claim up to $750 Kohl's gift card</p>
+                </div>
             </div>
+
+            <!-- Call to Action -->
+            <a href="https://giftclick.org/?offer_id=4140&aff_id=163201" class="mt-8 block w-full bg-kohlsmagenta hover:bg-pink-700 text-white text-center font-black text-[18px] py-4 rounded-full shadow-[0_8px_20px_rgba(225,12,122,0.3)] uppercase tracking-wider active:scale-95 transition-transform">
+                START NOW
+            </a>
+
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap justify-between items-center mt-4 px-2 text-sm text-gray-500 font-medium">
+                <div class="flex items-center gap-1.5 w-full sm:w-auto mb-2 sm:mb-0">
+                    <svg class="w-4 h-4 text-kohlsmagenta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Trusted by 50K+ members</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-kohlsmagenta fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-4 h-4 text-kohlsmagenta fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-4 h-4 text-kohlsmagenta fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-4 h-4 text-kohlsmagenta fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-4 h-4 text-kohlsmagenta fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <span class="text-kohlsmagenta font-bold ml-1">4.8</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-1.5 mt-2 px-2 text-sm text-gray-500 font-medium">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                <span>No upfront fees</span>
+            </div>
+
+            <!-- Notice Box -->
+            <div class="bg-pink-50 border border-pink-100 rounded-2xl p-5 mt-6 text-center">
+                <p class="text-kohlsmagenta text-[14px] leading-relaxed font-medium">
+                    <span class="text-lg">💡</span> To qualify for your Kohl's gift card, complete 4-5 required deals to unlock the full $750 reward. Finish each deal from start to completion.
+                </p>
+            </div>
+
+            <!-- FAQ Section -->
+            <h2 class="text-center text-[22px] font-bold text-gray-900 mt-12 mb-6 tracking-tight">Frequently Asked Questions</h2>
+            
+            <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden divide-y divide-gray-100">
+                
+                <details class="group p-5 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-gray-800 text-[15px]">
+                        How do I claim my $750 Kohl's Reward?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 mt-3 text-sm leading-relaxed">Click the start button above, enter your information, and complete the required number of sponsor deals to claim your reward.</p>
+                </details>
+
+                <details class="group p-5 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-gray-800 text-[15px]">
+                        How long does it take to receive my reward?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 mt-3 text-sm leading-relaxed">Once you complete the required deals and verify your ID, your digital gift card is typically delivered to your inbox within 24 to 48 hours.</p>
+                </details>
+
+                <details class="group p-5 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-gray-800 text-[15px]">
+                        Is this offer legitimate?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 mt-3 text-sm leading-relaxed">Yes! This is a real promotional program. Sponsors pay us to acquire new users, and we pass those advertising dollars back to you in the form of a gift card.</p>
+                </details>
+
+                <details class="group p-5 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-gray-800 text-[15px]">
+                        What deals do I need to complete?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 mt-3 text-sm leading-relaxed">Deals vary by user but typically include downloading mobile games, signing up for streaming services, or trying out new apps.</p>
+                </details>
+            </div>
+            
         </div>
-        
-        <!-- Social Proof Pop-up -->
-        <div id="claim-toast" class="fixed top-20 left-4 right-4 max-w-sm mx-auto bg-white/95 backdrop-blur-sm border-l-4 border-kohlsmagenta shadow-2xl rounded-xl p-4 transform transition-all -translate-y-10 opacity-0 duration-500 z-50 pointer-events-none">
+
+        <!-- Dynamic Social Proof Pop-up -->
+        <div id="claim-toast" class="fixed top-5 left-4 right-4 max-w-sm mx-auto bg-white/95 backdrop-blur-sm border-l-4 border-kohlsmagenta shadow-2xl rounded-xl p-4 transform transition-all -translate-y-24 opacity-0 duration-500 z-50 pointer-events-none">
             <div class="flex items-center">
                 <div class="text-green-500 mr-3 flex-shrink-0">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
@@ -132,11 +184,11 @@
             
             toastText.innerText = `${getRandomItem(names)} from ${getRandomItem(states)} just got $750`;
             
-            toast.classList.remove('-translate-y-10', 'opacity-0');
+            toast.classList.remove('-translate-y-24', 'opacity-0');
             toast.classList.add('translate-y-0', 'opacity-100');
             
             setTimeout(() => {
-                toast.classList.add('-translate-y-10', 'opacity-0');
+                toast.classList.add('-translate-y-24', 'opacity-0');
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 
                 setTimeout(showToast, getRandomDelay(3000, 7000));
