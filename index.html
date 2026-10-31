@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reward Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kohlsmagenta: '#E10C7A',
+                        kohlsdark: '#222222',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen relative overflow-hidden">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b-4 border-kohlsmagenta py-4 px-6 flex justify-between items-center">
+        <div class="text-3xl font-black tracking-tighter text-black">
+            <!-- Replace with your image_6217f3.png URL if hosting assets -->
+            KOHL'S
+        </div>
+        <div class="text-sm font-semibold text-gray-500 uppercase tracking-widest">
+            Reward Center
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center p-4 z-10">
+        <div class="bg-white max-w-md w-full rounded-2xl shadow-xl overflow-hidden fade-in border border-gray-100 relative">
+            <!-- Hero Banner -->
+            <div class="bg-kohlsdark p-8 text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-kohlsmagenta opacity-20 blur-2xl"></div>
+                <div class="absolute bottom-0 left-0 -ml-8 -mb-8 w-24 h-24 rounded-full bg-kohlsmagenta opacity-20 blur-xl"></div>
+                <h1 class="text-white text-xl font-medium mb-2 relative z-10">Exclusive Shopper Offer</h1>
+                <div class="text-kohlsmagenta text-6xl font-black tracking-tight mb-2 relative z-10">$750</div>
+                <p class="text-gray-300 text-sm font-medium relative z-10">Digital Gift Card</p>
+            </div>
+
+            <!-- Body -->
+            <div class="p-8 text-center">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">You have been selected!</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    As a thank you for being a valued customer, you are eligible to claim a $750 Kohl's Gift Card. Answer a few quick questions to confirm your eligibility.
+                </p>
+
+                <!-- Status Bar -->
+                <div class="flex items-center justify-center space-x-2 mb-8">
+                    <div class="w-3 h-3 rounded-full bg-kohlsmagenta"></div>
+                    <div class="w-3 h-3 rounded-full bg-gray-200"></div>
+                    <div class="w-3 h-3 rounded-full bg-gray-200"></div>
+                </div>
+
+                <!-- Call to Action -->
+                <a href="http://giftclick.org/?offer_id=4140&aff_id=163201" 
+                   class="block w-full bg-kohlsmagenta hover:bg-pink-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    Continue to Claim
+                </a>
+                
+                <p class="text-xs text-gray-400 mt-6">
+                    Offer valid while supplies last. Limit one per household. Terms and conditions apply.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-kohlsdark py-6 text-center text-gray-400 text-xs z-10">
+        <p>&copy; 2026 Promotional Offers. All rights reserved.</p>
+        <p class="mt-2">This is an independent reward program and is not affiliated with or endorsed by Kohl's.</p>
+    </footer>
+
+    <!-- Dynamic Social Proof Pop-up -->
+    <div id="claim-toast" class="fixed bottom-5 right-5 lg:bottom-10 lg:right-10 bg-white border-l-4 border-kohlsmagenta shadow-2xl rounded p-4 transform transition-all translate-y-32 opacity-0 duration-500 z-50 pointer-events-none">
+        <div class="flex items-center">
+            <div class="text-green-500 mr-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <div>
+                <p class="text-sm font-bold text-gray-900">Reward Claimed!</p>
+                <p id="toast-text" class="text-xs text-gray-600">Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const names = ["Sarah M.", "John D.", "Jessica T.", "Michael B.", "Amanda R.", "David L.", "Ashley C.", "James P.", "Emily W."];
+        const states = ["Texas", "Florida", "Ohio", "California", "New York", "Illinois", "Georgia", "Michigan", "Nevada", "Arizona"];
+        
+        function getRandomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function getRandomDelay(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        function showToast() {
+            const toast = document.getElementById('claim-toast');
+            const toastText = document.getElementById('toast-text');
+            
+            // Generate random user string
+            toastText.innerText = `${getRandomItem(names)} from ${getRandomItem(states)} just got $750`;
+            
+            // Slide up and fade in
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            
+            // Wait 4 seconds, then hide
+            setTimeout(() => {
+                toast.classList.add('translate-y-32', 'opacity-0');
+                
+                // Trigger the next pop-up randomly between 3 to 7 seconds later
+                setTimeout(showToast, getRandomDelay(3000, 7000));
+            }, 4000);
+        }
+
+        // Start the first pop-up 2 seconds after the page loads
+        setTimeout(showToast, 2000);
+    </script>
+</body>
+</html>
