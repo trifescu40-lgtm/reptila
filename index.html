@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kohl's Customer Offer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,900;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -23,10 +23,10 @@
         details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
-<body class="antialiased pb-20">
+<body class="antialiased m-0 p-0">
 
     <!-- Mobile Container -->
-    <main class="max-w-md mx-auto bg-[#f8f9fa] min-h-screen relative shadow-2xl overflow-x-hidden">
+    <main class="max-w-md mx-auto bg-[#f8f9fa] min-h-screen relative shadow-2xl overflow-x-hidden flex flex-col">
         
         <!-- Header Banner -->
         <header class="bg-kohlsmagenta px-6 pt-10 pb-12 text-center rounded-b-[2rem]">
@@ -43,7 +43,7 @@
         </header>
 
         <!-- Main Content Area -->
-        <div class="px-5 -mt-4">
+        <div class="px-5 -mt-4 flex-grow">
             
             <!-- Steps Section -->
             <h2 class="text-center text-[22px] font-bold text-gray-900 mt-10 mb-4 tracking-tight">Steps to Qualify:</h2>
@@ -98,9 +98,9 @@
             </div>
 
             <!-- Notice Box -->
-            <div class="bg-pink-50 border border-pink-100 rounded-2xl p-5 mt-6 text-center">
-                <p class="text-kohlsmagenta text-[14px] leading-relaxed font-medium">
-                    <span class="text-lg">💡</span> To qualify for your Kohl's gift card, complete 4-5 required deals to unlock the full $750 reward. Finish each deal from start to completion.
+            <div class="bg-pink-50/70 border border-pink-100 rounded-2xl py-5 px-6 mt-6">
+                <p class="text-kohlsmagenta text-[15px] leading-relaxed font-medium text-center">
+                    💡 To qualify for your Kohl's gift card, complete 4-5 required deals to unlock the full $750 reward. Finish each deal from start to completion.
                 </p>
             </div>
 
@@ -150,22 +150,22 @@
                 </details>
             </div>
             
-            <!-- Promotional Disclaimer -->
-            <div class="text-center mt-8 mb-2">
-                <p class="text-slate-500 text-[14px]">Limited-time promotional program.</p>
-            </div>
-            
+        </div>
+        
+        <!-- Promotional Disclaimer aligned to bottom -->
+        <div class="text-center mt-12 pb-3 w-full">
+            <p class="text-slate-500 text-[14px]">Limited-time promotional program.</p>
         </div>
 
-        <!-- Dynamic Social Proof Pop-up -->
-        <div id="claim-toast" class="fixed top-5 left-4 right-4 max-w-sm mx-auto bg-white/95 backdrop-blur-sm border-l-4 border-kohlsmagenta shadow-2xl rounded-xl p-4 transform transition-all -translate-y-24 opacity-0 duration-500 z-50 pointer-events-none">
-            <div class="flex items-center">
-                <div class="text-green-500 mr-3 flex-shrink-0">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+        <!-- Dynamic Social Proof Pop-up (Bottom Positioned) -->
+        <div id="claim-toast" class="fixed bottom-6 left-4 right-4 max-w-[340px] mx-auto bg-white/95 backdrop-blur-sm shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 rounded-[24px] p-3 transform transition-all translate-y-32 opacity-0 duration-500 z-50 pointer-events-none">
+            <div class="flex items-center gap-3">
+                <div class="w-[46px] h-[46px] rounded-full bg-kohlsmagenta flex items-center justify-center flex-shrink-0 shadow-inner">
+                    <span class="text-white text-[10px] font-extrabold tracking-wider">KOHL'S</span>
                 </div>
-                <div>
-                    <p class="text-sm font-bold text-gray-900 leading-tight">Reward Claimed!</p>
-                    <p id="toast-text" class="text-xs text-gray-600 mt-0.5">Loading...</p>
+                <div class="flex flex-col justify-center">
+                    <p id="toast-title" class="text-[15px] font-bold text-gray-900 leading-tight tracking-tight">Loading...</p>
+                    <p id="toast-subtitle" class="text-[13.5px] text-slate-500 mt-0.5 font-medium">Loading...</p>
                 </div>
             </div>
         </div>
@@ -173,7 +173,7 @@
 
     <script>
         const names = ["Sarah M.", "John D.", "Jessica T.", "Michael B.", "Amanda R.", "David L.", "Ashley C.", "James P.", "Emily W."];
-        const states = ["Texas", "Florida", "Ohio", "California", "New York", "Illinois", "Georgia", "Michigan", "Nevada", "Arizona"];
+        const cities = ["Charlotte, NC", "Austin, TX", "Miami, FL", "Denver, CO", "Phoenix, AZ", "Seattle, WA", "Atlanta, GA", "Dallas, TX", "Chicago, IL", "Boston, MA"];
         
         function getRandomItem(arr) {
             return arr[Math.floor(Math.random() * arr.length)];
@@ -185,22 +185,26 @@
 
         function showToast() {
             const toast = document.getElementById('claim-toast');
-            const toastText = document.getElementById('toast-text');
+            const toastTitle = document.getElementById('toast-title');
+            const toastSubtitle = document.getElementById('toast-subtitle');
             
-            toastText.innerText = `${getRandomItem(names)} from ${getRandomItem(states)} just got $750`;
+            const minutes = Math.floor(Math.random() * 12) + 1;
             
-            toast.classList.remove('-translate-y-24', 'opacity-0');
+            toastTitle.innerText = `${getRandomItem(names)} just claimed a $750 reward`;
+            toastSubtitle.innerText = `${getRandomItem(cities)} • ${minutes} min ago`;
+            
+            toast.classList.remove('translate-y-32', 'opacity-0');
             toast.classList.add('translate-y-0', 'opacity-100');
             
             setTimeout(() => {
-                toast.classList.add('-translate-y-24', 'opacity-0');
+                toast.classList.add('translate-y-32', 'opacity-0');
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 
-                setTimeout(showToast, getRandomDelay(3000, 7000));
-            }, 4000);
+                setTimeout(showToast, getRandomDelay(3500, 7500));
+            }, 4500);
         }
 
-        setTimeout(showToast, 2000);
+        setTimeout(showToast, 1500);
     </script>
 </body>
 </html>
